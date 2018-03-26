@@ -1,3 +1,3 @@
 # CircleCISelenium
 
-Experiment
+Setup
