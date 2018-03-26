@@ -4,32 +4,26 @@ jobs:
     docker:
      # - image: circleci/openjdk:8-jdk-browsers
       
-    - image: circleci/openjdk
+        - image: circleci/openjdk:8-jdk-browsers
+
+    steps:
+
+      - checkout
+
+      - restore_cache:
+          key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
       
- 
-          
-          
-          general:
-  artifacts:
-    - "./screenshots" #Save the screenshots for all the tests
-- "./log" #Save the logs for all the tests
-
-## Customize dependencies
-dependencies:
-  pre:
-    - sudo pip install -U selenium
-    - sudo apt-get update
-    - sudo apt-get install nginx
-     # Copy the html page to nginx default public www location
-    - sudo cp ./selenium-tutorial-main.html /var/www/html/selenium-tutorial-main.html
- 
-## Running Tests
-test:
-  # The key call to clone the test repository before we run the test
-  pre:
-    - git clone https://github.com/krishnmohan/CircleCISelenium.git
-
-  # Running Tests
- test:
-   override:
-    - CircleCISelenium/CoreTest/src/FunctionalTest/CoreTestScript.java 
+      - run: mvn dependency:go-offline
+      
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
+      
+      - run: mvn package
+      
+      - store_test_results:
+          path: target/surefire-reports
+      
+      - store_artifacts:
+          path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
