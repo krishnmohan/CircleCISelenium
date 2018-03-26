@@ -40,4 +40,4 @@ dependencies:
   ## Running Tests
 test:
    override:
-    - python tests/Navigate_Qxf2_Tutorial_Test.py
+    - CircleCISelenium/CoreTest/src/FunctionalTest/CoreTestScript.java 
