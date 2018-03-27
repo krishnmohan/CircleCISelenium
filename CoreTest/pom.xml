@@ -6,6 +6,7 @@
 
  <scm>
   <developerConnection>scm:git:git@github.com:krishnmohan/CircleCISelenium.git</developerConnection>
+	  <url>https://github.com/krishnmohan/CircleCISelenium.git</url>
   <tag>HEAD</tag>
 </scm>
   
