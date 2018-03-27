@@ -14,7 +14,10 @@ jobs:
       - restore_cache:
           key:  CircleCISelenium/CoreTest-{{ checksum "pom.xml" }}
       
-      - run: mvn dependency:go-offline
+      dependencies:
+  override:
+- mvn -DskipTests clean install dependency:resolve-plugins dependency:go-offline
+   #   - run: mvn dependency:go-offline
       
       - save_cache:
           paths:
@@ -29,6 +32,11 @@ jobs:
       - store_artifacts:
           path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
 
+ 
+ 
+test:
+  override:
+- mvn -o surefire:test
  
 ## Running Tests
 test:
