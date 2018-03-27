@@ -1,7 +1,7 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
   <servers>
     <server>
-      <id>krishnmohan/CircleCISelenium</id>
+      <id>packagecloud-CoreTest</id>
       <password>${env.be4ab22e0e3216299290c540b543d59a0dfe1281}</password>
     </server>
   </servers>
