@@ -12,14 +12,14 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: krishnmohan/CircleCISelenium-{{ checksum "pom.xml" }}
+          key: CoreTest-{{ checksum "pom.xml" }}
       
       - run: mvn dependency:go-offline
       
       - save_cache:
           paths:
             - ~/.m2
-          key: krishnmohan/CircleCISelenium-{{ checksum "pom.xml" }}
+          key: CoreTest-{{ checksum "pom.xml" }}
       
       - run: mvn package
       
