@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     
-    working_directory: ~/krishnmohan/CircleCISelenium
+    working_directory: ~/CircleCISelenium
 
     docker:
       - image: circleci/openjdk:8-jdk-browsers
