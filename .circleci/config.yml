@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     
- ##   working_directory: ~/krishnmohan/CircleCISelenium
+    working_directory: ~/krishnmohan/CircleCISelenium
 
     docker:
       - image: circleci/openjdk:8-jdk-browsers
@@ -12,14 +12,14 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: krishnmohan/CircleCISelenium-{{ checksum "CircleCISelenium/CoreTest/pom.xml" }}
+          key: krishnmohan/CircleCISelenium-{{ checksum "pom.xml" }}
       
       - run: mvn dependency:go-offline
       
       - save_cache:
           paths:
             - ~/.m2
-          key: krishnmohan/CircleCISelenium-{{ checksum "CircleCISelenium/CoreTest/pom.xml" }}
+          key: krishnmohan/CircleCISelenium-{{ checksum "pom.xml" }}
       
       - run: mvn package
       
