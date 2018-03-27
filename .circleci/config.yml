@@ -12,7 +12,7 @@ jobs:
       - checkout
 
       - restore_cache:
-           path:  CircleCISelenium/CoreTest/pom.xml 
+           
           key: CoreTest-{{ checksum "pom.xml" }}
       
       - run: mvn dependency:go-offline
