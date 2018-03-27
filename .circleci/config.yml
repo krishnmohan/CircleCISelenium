@@ -36,6 +36,6 @@ path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
 
 test:
   post:
-    - if [[ $GIT_USER_EMAIL ]]; then git config --global user.email "$GIT_USER_EMAIL" ; fi
-    - if [[ $GIT_USER_NAME ]]; then git config --global user.name "$GIT_USER_NAME" ; fi
+    - if [[ $GIT_USER_EMAIL ]]; then git config --global user.email "$GIT_rcrmtest3@gmail.com" ; fi
+    - if [[ $GIT_USER_NAME ]]; then git config --global user.name "$GIT_krishnmohan" ; fi
     - if [[ $RELEASE ]]; then mvn -B release:prepare -DreleaseVersion=$RELEASE -DdevelopmentVersion=$NEXT ; fi
