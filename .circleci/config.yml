@@ -38,7 +38,4 @@ jobs:
           key: v1-dependencies-{{ checksum "CoreTest/pom.xml" }}
         
       # run tests!
-     - mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archet
-    ypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=5-SNAPS
-    HOT
       - run: mvn integration-test
