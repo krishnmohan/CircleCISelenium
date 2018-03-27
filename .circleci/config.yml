@@ -8,9 +8,7 @@ jobs:
       - image: circleci/openjdk:8-jdk-browsers
 
     steps:
-
       - checkout
-
       - restore_cache:
           key:  CircleCISelenium/CoreTest-{{ checksum "pom.xml" }}
       
@@ -36,6 +34,6 @@ test:
 - mvn -o surefire:test
  
 ## Running Tests
-test:
-   override:
-    - java  CircleCISelenium/CoreTest/src/FunctionalTest/CoreTestScript.java
+##test:
+##   override:
+  ##  - java  CircleCISelenium/CoreTest/src/FunctionalTest/CoreTestScript.java
