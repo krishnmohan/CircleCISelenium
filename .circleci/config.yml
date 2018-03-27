@@ -1,19 +1,36 @@
+n
+
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/<language>:<version TAG>
-    steps:
     
-    ## Set the artifacts
-general:
-  artifacts:
-    - "./tests/screenshots" #Save the screenshots for the tests
- 
-## Customize dependencies
-dependencies:
-  pre:
-    - sudo pip install -U selenium	
+    working_directory: ~/krishnmohan/CircleCISelenium
+
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+
+    steps:
+
+      - checkout
+
+      - restore_cache:
+          key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
+      
+      - run: mvn dependency:go-offline
+      
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
+      
+      - run: mvn package
+      
+      - store_test_results:
+          path: target/surefire-reports
+      
+      - store_artifacts:
+          path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
+
  
 ## Running Tests
 test:
