@@ -8,16 +8,18 @@ jobs:
       - image: circleci/openjdk:8-jdk-browsers
 
     steps:
+
       - checkout
+
       - restore_cache:
-          key:  CircleCISelenium/CoreTest-{{ checksum "pom.xml" }}
+          key: krishnmohan/CircleCISelenium-{{ checksum "pom.xml" }}
       
-           - run: mvn dependency:go-offline
+      - run: mvn dependency:go-offline
       
       - save_cache:
           paths:
             - ~/.m2
-          key: CircleCISelenium/CoreTest-{{ checksum "pom.xml" }}
+          key: krishnmohan/CircleCISelenium-{{ checksum "pom.xml" }}
       
       - run: mvn package
       
@@ -25,14 +27,8 @@ jobs:
           path: target/surefire-reports
       
       - store_artifacts:
-          path: target/demo-java-spring-0.0.1-SNAPSHOT.jar
-
- 
- 
-test:
-  override:
-- mvn -o surefire:test
- 
+          path: target/demo-java-spring-0.0.1-SNAPSHOT.ja
+          
 ## Running Tests
 ##test:
 ##   override:
