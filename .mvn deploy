@@ -1,0 +1,1 @@
+mvn deploy:deploy-file -DgroupId=org.apache.maven.plugins -DartifactId=maven-release-plugin -Dversion=3.7.0 -Dpackaging=maven-plugin -Dfile=/path/to/file -Durl=[url] -DrepositoryId=[id]
