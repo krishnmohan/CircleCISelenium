@@ -32,6 +32,9 @@ jobs:
           - v1-dependencies-
 
       - run: mvn dependency:go-offline
+      dependencies:
+  override:
+    - mvn -DskipTests clean install dependency:resolve-plugins dependency:go-offline
 
       - save_cache:
           paths:
