@@ -31,9 +31,9 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: mvn dependency:go-offline
+      - run: mvn dependency:go-offline 
    # - run: cd CoreTest && mvn dependency:go-offline
-
+- run: mvn –o clean package 
 
       - save_cache:
           paths:
