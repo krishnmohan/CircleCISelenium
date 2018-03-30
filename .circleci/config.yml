@@ -30,7 +30,7 @@ steps:
 
   - run: mvn dependency:go-offline 
 
-- run: cd CoreTest && mvn dependency:go-offline
+# - run: cd CoreTest && mvn dependency:go-offline
 
   - save_cache:
       paths:
