@@ -2,7 +2,7 @@
   <servers>
     <server>
       <id>packagecloud-CoreTest</id>
-      <password>${env.be4ab22e0e3216299290c540b543d59a0dfe1281}</password>
+      <password>${env.CoreTest_PACKAGECLOUD_API_TOKEN}</password>
     </server>
   </servers>
 </settings>
