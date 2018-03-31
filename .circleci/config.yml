@@ -45,4 +45,4 @@ jobs:
 
 test:
   override:
-    - mvn -o surefire:test
+    - mvn -o surefire:Coretest
