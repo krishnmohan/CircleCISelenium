@@ -3,6 +3,7 @@
   <groupId>CoreTest</groupId>
   <artifactId>CoreTest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+	
 
  <scm>
   <developerConnection>scm:git:git@github.com:krishnmohan/CircleCISelenium.git</developerConnection>
