@@ -35,7 +35,7 @@ public class CoreTestScript {
 			  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		  String title = driver.getTitle();
 			  System.out.println("Test Case 1 to get Page Title : " +title);
-			  AssertJUnit.assertTrue(title.contains("R-CRM - Login to RecruitCRM"));
+			  AssertJUnit.assertTrue(title.contains("R-CRM - LLogin to RecruitCRM"));
 			 // Assert.assertTrue(title.contains("R-CRM - Sign Up on RecruitCRM"));
 			 
 		  }
