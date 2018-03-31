@@ -43,9 +43,9 @@ jobs:
       # run tests!
 # - run: mvn integration-test
 
-# test:
-  # override:
-    # - mvn -o surefire:test
+ test:
+   override:
+     - mvn -o surefire:test
           
       - store_artifacts:
 path: target/CoreTest-CoreTest-0.0.1-SNAPSHOT.jar
